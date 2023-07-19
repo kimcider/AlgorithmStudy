@@ -66,7 +66,6 @@ public class Main {
 						continue;
 					}
 				}
-//				System.out.println("remove " + maxKey);
 				tap.remove(maxKey);
 				plugIn(order[i]);
 			}
