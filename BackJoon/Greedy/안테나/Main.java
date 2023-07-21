@@ -12,10 +12,9 @@ public class Main {
 			
 			int[]list = new int[n];
 			String[] str = br.readLine().split(" ");
-			BigInteger sum = new BigInteger("0");
+			int sum = 0;
 			for(int i = 0; i < n; i++) {
 				list[i] = Integer.valueOf(str[i]);
-				sum = sum.add(list[i]);
 				sum = sum + list[i];
 			}
 			
@@ -41,11 +40,9 @@ public class Main {
 				}
 			}
 			
-			BigInteger answer = new BigInteger("0");
+			BigInteger answer = new BigInteger;
 			for(int i = 0; i < n; i++) {
-				Math.abs(list[i] - mid);
-				answer = answer.add(Math.abs(list[i] - mid));
-				
+				answer = answer + Math.abs(list[i] - mid);
 			}
 //			int answer = 0;
 //			for(int i = 0; i < n; i++) {
