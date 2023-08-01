@@ -14,11 +14,11 @@ public class Main {
 			}
 			
 			int[] LIS = new int[n];
-			int[] before = new int[n];
+			int[] trace = new int[n];
 			
 			for(int i = 0; i < n; i++) {
 				LIS[i] = 1;
-				before[i] = -1;
+				trace[i] = -1;
 			}
 			
 			int max = 0;
@@ -28,7 +28,7 @@ public class Main {
 					if(ary[i] > ary[j]) {
 						if(LIS[i] < LIS[j] + 1) {
 							LIS[i] = LIS[j] + 1;
-							before[i] = j;
+							trace[i] = j;
 							
 							if(LIS[i] > max) {
 								max = LIS[i];
@@ -45,7 +45,7 @@ public class Main {
 			while(index >= 0) {
 //				System.out.println(index);
 				pq.add(ary[index]);
-				index = before[index];
+				index = trace[index];
 			}
 			
 			int size = pq.size(); 
