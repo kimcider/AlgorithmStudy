@@ -1,4 +1,4 @@
-package Q1_2;
+package Q1_2_순열_확인;
 
 import java.util.*;
 public class Main {
