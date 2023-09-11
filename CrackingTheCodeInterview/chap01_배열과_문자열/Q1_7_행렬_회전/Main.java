@@ -23,15 +23,28 @@ public class Main {
 
 	static void rotate() {
 		int[] ary = new int[n];
-		for(int i = 0; i < n/2; i++) {
-			printMatrix();
-			System.out.println(i);
-			
+		for(int i = 0; i < n/2; i++) {			
 			//a-b저장
-			for(int j = i; j < n - i; j++) {
+			for(int j = i + 1; j < n - i ; j++) {
 				ary[j] = matrix[i][j];
 			}
 			
+			//ca -> ab
+			for(int j = i; j < n - i - 1; j++)
+				matrix[i][n - j - 1] = matrix[j][i];
+			
+			//cd -> ac
+			for(int j = i; j < n - i - 1; j++)
+				matrix[j][i] = matrix[n - i - 1][j];
+				
+			//bd -> cd
+			for(int j = i; j < n - i - 1; j++)
+				matrix[n - i - 1][j] = matrix[n - j - 1][n - i - 1];
+
+			//ary -> bd
+			for(int j = i + 1; j < n - i; j++)
+				matrix[j][n - i - 1] = ary[j];
+				
 		}
 	}
 	
